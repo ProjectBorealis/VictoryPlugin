@@ -4665,7 +4665,7 @@ int32 UVictoryBPFunctionLibrary::findSource(class USoundWave* sw, class FSoundSo
 		for (auto activeSoundIt(tmpActualSounds.CreateIterator()); activeSoundIt; ++activeSoundIt)
 		{
 			activeSound = *activeSoundIt;
-			for (auto WaveInstanceIt(activeSound->WaveInstances.CreateIterator()); WaveInstanceIt; ++WaveInstanceIt)
+			for (auto WaveInstanceIt(activeSound->GetWaveInstances().CreateConstIterator()); WaveInstanceIt; ++WaveInstanceIt)
 			{
 				sw_instance = WaveInstanceIt.Value();
 				if (sw_instance->WaveData->CompressedDataGuid == sw->CompressedDataGuid)

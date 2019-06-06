@@ -11,32 +11,16 @@ public class VictoryBPLibrary : ModuleRules
 		//4.15 Include What You Use
 		bEnforceIWYU = false;
 		
-		PublicIncludePaths.AddRange(
-			new string[] {
-				"VictoryBPLibrary/Public"
-				
-				// ... add public include paths required here ...
-			}
-			);
-				
+		PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "Public"));
 		
-		PrivateIncludePaths.AddRange(
-			new string[] {
-				"VictoryBPLibrary/Private",
-				
-				// ... add other private include paths required here ...
-			}
-			);
-			
+		PrivateIncludePaths.Add(Path.Combine(ModuleDirectory, "Private"));			
 		
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core"
-				
-				// ... add other public dependencies that you statically link with here ...
+				"Core".
 			}
-			);
+		);
 			
 		
 		PrivateDependencyModuleNames.AddRange(
@@ -64,10 +48,9 @@ public class VictoryBPLibrary : ModuleRules
 				
 				"Vorbis",
 				
-				//FPlatformApplicationMisc
 				"ApplicationCore"
 			}
-			);
+		);
 		
 		//APEX EXCLUSIONS
 		if (Target.Platform != UnrealTargetPlatform.Android && Target.Platform != UnrealTargetPlatform.HTML5 && Target.Platform != UnrealTargetPlatform.IOS)
@@ -87,13 +70,5 @@ public class VictoryBPLibrary : ModuleRules
 			);
 		
 		}
-	
-		 
-		DynamicallyLoadedModuleNames.AddRange(
-			new string[]
-			{
-				// ... add any modules that your module loads dynamically here ...
-			}
-			);
 	}
 }
