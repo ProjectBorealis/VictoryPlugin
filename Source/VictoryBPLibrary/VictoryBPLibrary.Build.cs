@@ -1,6 +1,7 @@
 // Some copyright should be here...
 
 using UnrealBuildTool;
+using System.IO;
 
 public class VictoryBPLibrary : ModuleRules
 {
@@ -18,7 +19,7 @@ public class VictoryBPLibrary : ModuleRules
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core".
+				"Core"
 			}
 		);
 			
